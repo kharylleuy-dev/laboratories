@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kharylle Uy — Resume</title>
+
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --accent: #222;
+      --muted: #000000;
+      --light: #f6f6f6;
+      --page-bg: #f7dfba;
+      --paper: #ffffff;
+      --line: #e6e6e6;
+      --maxw: 900px;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: var(--page-bg);
+      font-family: "Open Sans", sans-serif;
+      color: var(--accent);
+    }
+
+    .paper-wrap {
+      box-sizing: border-box;
+      width: var(--maxw);
+      max-width: 95%;
+      margin: 28px auto;
+      background: var(--paper);
+      padding: 34px 46px;
+      box-shadow: 0 0 0 12px rgba(0, 0, 0, 0.65);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .name {
+      font-family: "Montserrat", sans-serif;
+      font-size: 36px;
+      letter-spacing: 1px;
+      margin: 0;
+      color: #111;
+    }
+
+    .title {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 6px;
+      font-weight: 600;
+    }
+
+    .logo-wrap {
+      display: flex;
+      justify-content: center;
+      margin: 18px 0;
+    }
+
+    .hex {
+      width: 86px;
+      height: 100px;
+      position: relative;
+      display: inline-block;
+      margin: 0;
+    }
+
+    .hex:before, .hex:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      border-left: 43px solid transparent;
+      border-right: 43px solid transparent;
+    }
+
+    .hex:before {
+      border-bottom: 25px solid #222;
+      top: 0;
+    }
+
+    .hex .mid {
+      width: 86px;
+      height: 50px;
+      background: #222;
+      margin-top: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: "Montserrat";
+      font-weight: 700;
+      font-size: 22px;
+    }
+
+    .hex:after {
+      border-top: 25px solid #222;
+      bottom: 0;
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin: 12px 0 22px;
+      padding: 12px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-col {
+      flex: 1;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .contact-col strong {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .contact-sep {
+      width: 1px;
+      background: var(--line);
+      margin: 0 18px;
+    }
+
+    .section {
+      margin: 22px 0;
+    }
+
+    .section h2 {
+      margin: 0 0 14px 0;
+      font-family: "Montserrat";
+      font-size: 16px;
+      letter-spacing: 0.6px;
+      color: var(--accent);
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 8px;
+    }
+
+    .entries {
+      display: block;
+    }
+
+    .entry {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 18px;
+      padding: 16px 0;
+      align-items: start;
+      border-bottom: 1px dashed var(--light);
+    }
+
+    .entry:last-child {
+      border-bottom: none;
+    }
+
+    .entry .left {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .entry .left .role {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .entry .right .company {
+      font-weight: 700;
+      color: #111;
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .entry .right .desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .two-col {
+      display: flex;
+      gap: 28px;
+      margin-top: 12px;
+    }
+
+    .col {
+      flex: 1;
+      background: transparent;
+    }
+
+    .skills-list {
+      font-size: 13px;
+      color: var(--muted);
+      padding-left: 12px;
+    }
+
+    .skills-list li {
+      margin-bottom: 6px;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .paper-wrap {
+        box-shadow: none;
+        margin: 0;
+        padding: 20px;
+        width: 100%;
+      }
+
+      .hex {
+        transform: scale(0.9);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .contact-row {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .entry {
+        grid-template-columns: 1fr;
+      }
+
+      .entry .left {
+        margin-bottom: 8px;
+      }
+
+      .two-col {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="paper-wrap">
+    <header>
+      <h1 class="name">KHARYLLE M. UY</h1>
+      <div class="title">Bachelor of Science in Information Technology — Cybersecurity & Software Development</div>
+
+      <div class="logo-wrap" aria-hidden="true">
+        <div class="hex" role="img" aria-label="logo">
+          <div class="mid">KMU</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- contact / portfolio -->
+    <div class="contact-row">
+      <div class="contact-col">
+        <div><strong>Contact</strong></div>
+        <div style="margin-top:8px;">
+          Phone: 09109303814<br>
+          Location: Brgy. San Juan, Bobon, Northern Samar<br>
+          Email: kharylleuy@gmail.com
+        </div>
+      </div>
+
+      <div class="contact-sep" aria-hidden="true"></div>
+
+      <div class="contact-col" style="text-align:left;">
+        <div><strong>Social</strong></div>
+        <div style="margin-top:8px;">
+          Facebook: Kharylle Miranda Uy<br>
+          Instagram: khry_lly<br>
+        </div>
+      </div>
+    </div>
+
+    <!-- Experience section -->
+    <section class="section">
+      <h2>Experience</h2>
+      <div class="entries">
+        <div class="entry">
+          <div class="left">
+            <div class="role">Cyber Security Personnel</div>
+            <div style="margin-top:8px; font-weight:600;">2025 — 2027</div>
+          </div>
+          <div class="right">
+            <div class="company">Quantum INC.</div>
+            <div class="desc">
+              Monitored and secured company systems, performed vulnerability testing, developed cybersecurity protocols, and analyzed threats to strengthen organizational IT defenses.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section">
+      <h2>Education</h2>
+      <div class="entries">
+        <div class="entry">
+          <div class="left">
+            <div class="role">Bachelor of Science in Information Technology</div>
+            <div style="margin-top:8px; font-weight:600;">(2023-2027)</div>
+          </div>
+          <div class="right">
+            <div class="company">University of Eastern Philippines</div>
+            <div class="desc">Graduated as <strong>Cum Laude</strong></div>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="left">
+            <div class="role">TESDA NC2 - Computer Programmer</div>
+            <div style="margin-top:8px; font-weight:600;">(2026)</div>
+          </div>
+          <div class="right">
+            <div class="company">TESDA</div>
+            <div class="desc">Certified in system servicing, computer programming, and IT security basics.</div>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="left">
+            <div class="role">Elementary</div>
+            <div style="margin-top:8px; font-weight:600;">(2011 — 2017)</div>
+          </div>
+          <div class="right">
+            <div class="company">Bobon Central Elementary School</div>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="left">
+            <div class="role">High School & Senior High School</div>
+            <div style="margin-top:8px; font-weight:600;">(2017 — 2023)</div>
+          </div>
+          <div class="right">
+            <div class="company">Saint Michael Academy, Catarman Northern Samar</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Skills -->
+    <div class="two-col">
+      <div class="col">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+          <li>System Analysis</li>
+          <li>Cybersecurity Systems</li>
+          <li>Software Development</li>
+          <li>Programming</li>
+          <li>Network Configuration</li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h2>AWARDS & CERTIFICATES</h2>
+        <div style="font-size:13px;color:var(--muted);">
+          <strong>Cum Laude</strong> — University of Eastern Philippines (2027)<br><br>
+          <strong>TESDA NC II</strong> — Computer Programmer (2026)<br><br>
+          <div style="font-size:13px;color:var(--muted);"></div>
+          <strong>Civil Service passer</strong> - Professional license (2027)
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="margin-top:26px; text-align:center; color:var(--muted); font-size:12px;">
+      Last updated • 2027
+    </footer>
+  </div>
+</body>
+</html>
